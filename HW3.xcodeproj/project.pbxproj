@@ -20,6 +20,7 @@
 		A3DE23192339362800A3F03B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */; };
 		A3DE23432339364E00A3F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C9DB323353CA5008EF8FB /* Main.storyboard */; };
 		A3DE23442339364F00A3F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C9DB323353CA5008EF8FB /* Main.storyboard */; };
+		A3DE234B233938BA00A3F03B /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DE234A233938BA00A3F03B /* DecimalMinusTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		A34C9DDF23353E96008EF8FB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A34C9DE123354221008EF8FB /* UnitsAndModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsAndModes.swift; sourceTree = "<group>"; };
+		A3DE234A233938BA00A3F03B /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecimalMinusTextField.swift; path = ../../../Downloads/DecimalMinusTextField/DecimalMinusTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				A34C9DB823353CA6008EF8FB /* LaunchScreen.storyboard */,
 				A34C9DBB23353CA6008EF8FB /* Info.plist */,
 				A34C9DE123354221008EF8FB /* UnitsAndModes.swift */,
+				A3DE234A233938BA00A3F03B /* DecimalMinusTextField.swift */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				A34C9DDE23353E7F008EF8FB /* CalculatorViewController.swift in Sources */,
 				A34C9DE223354221008EF8FB /* UnitsAndModes.swift in Sources */,
 				A34C9DB023353CA5008EF8FB /* AppDelegate.swift in Sources */,
+				A3DE234B233938BA00A3F03B /* DecimalMinusTextField.swift in Sources */,
 				A34C9DE023353E96008EF8FB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

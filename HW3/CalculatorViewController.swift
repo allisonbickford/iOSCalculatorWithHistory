@@ -13,8 +13,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var fromUnits: UILabel!
     @IBOutlet weak var toUnits: UILabel!
-    @IBOutlet weak var fromField: UITextField!
-    @IBOutlet weak var toField: UITextField!
+    @IBOutlet weak var fromField: DecimalMinusTextField!
+    @IBOutlet weak var toField: DecimalMinusTextField!
     @IBOutlet weak var calcButton: UIButton!
     
     @IBOutlet weak var clearButton: UIButton!
