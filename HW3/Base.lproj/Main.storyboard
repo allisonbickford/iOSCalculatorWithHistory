@@ -35,12 +35,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="clearTheOtherWithTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="A0z-un-eNu"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-rc-ked">
                                 <rect key="frame" x="61" y="206" width="171" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="clearTheOtherWithTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="eQN-yo-Lvs"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0W-D2-JMs">
                                 <rect key="frame" x="231" y="140" width="43" height="21"/>
@@ -91,10 +97,12 @@
                     <connections>
                         <outlet property="calcButton" destination="Scb-vd-aCA" id="936-Ge-Rq1"/>
                         <outlet property="clearButton" destination="Sde-8N-oWH" id="evf-xQ-30n"/>
+                        <outlet property="fromDelegate" destination="aRR-8c-DO9" id="d1d-Xg-cOa"/>
                         <outlet property="fromField" destination="aRR-8c-DO9" id="Gjw-jq-mKc"/>
                         <outlet property="fromLabel" destination="FDu-Ty-pfM" id="uwh-op-gwd"/>
                         <outlet property="fromUnits" destination="FDu-Ty-pfM" id="eei-5D-hF2"/>
                         <outlet property="modeButton" destination="gKP-7t-RTS" id="ayU-4v-Uln"/>
+                        <outlet property="toDelegate" destination="1DX-rc-ked" id="IWa-Bk-PGT"/>
                         <outlet property="toField" destination="1DX-rc-ked" id="Gk1-vy-YQK"/>
                         <outlet property="toLabel" destination="shp-LZ-U6U" id="lz9-r3-fTv"/>
                         <outlet property="toUnits" destination="fI1-5r-DtO" id="Zm1-kh-Zf3"/>
