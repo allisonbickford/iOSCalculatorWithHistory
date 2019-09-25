@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  HW3
 //
-//  Created by Allison Bickford on 9/20/19.
+//  Created by Allison Bickford and Tonae Patterson on 9/20/19.
 //  Copyright © 2019 Allison Bickford. All rights reserved.
 //
 
