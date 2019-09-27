@@ -31,6 +31,16 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     var tUnits: String?
      // ===================================================================================/
     
+    
+    @IBAction func changeMode(_ sender: UIButton) {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "volume")
+        if (self.restorationIdentifier == "volume") {
+            dismiss(animated: true, completion: nil)
+        } else {
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func calculateLen(_ sender: UIButton) {
         // If both text fields have values - display error message & erase text //
         if (!(self.fromField.text?.isEmpty)! && !(self.toField.text?.isEmpty)!) {
@@ -188,6 +198,8 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
         if let dest = segue.destination as? ModeConversionView {
             dest.delegate = self
             dest.modeSel = self.fromUnits.text == "Meters" || self.fromUnits.text == "Yards" || self.fromUnits.text == "Miles"
+            dest.fromUnits = fromUnits.text!
+            dest.toUnits = toUnits.text!
         }
     }
     
