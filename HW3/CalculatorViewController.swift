@@ -13,115 +13,95 @@ import UIKit
 
 class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     
+    var mode: CalculatorMode = CalculatorMode.Volume
+    
+    var volFromUnit = VolumeUnit.Gallons
+    var volToUnit = VolumeUnit.Liters
+    
+    var lenFromUnit = LengthUnit.Miles
+    var lenToUnit = LengthUnit.Meters
+
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var fromUnits: UILabel!
     @IBOutlet weak var toUnits: UILabel!
     @IBOutlet weak var fromField: DecimalMinusTextField!
-    //@IBOutlet weak var fromFieldv: DecimalMinusTextField!
     @IBOutlet weak var fromDelegate: UITextFieldDelegate!
     @IBOutlet weak var toField: DecimalMinusTextField!
-    //@IBOutlet weak var toFieldv: DecimalMinusTextField!
     @IBOutlet weak var toDelegate: UITextFieldDelegate!
     @IBOutlet weak var calcButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var modeButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
-    var fUnits: String?
-    var tUnits: String?
-     // ===================================================================================/
-    
     
     @IBAction func changeMode(_ sender: UIButton) {
-        let controller = storyboard!.instantiateViewController(withIdentifier: "volume")
-        if (self.restorationIdentifier == "volume") {
-            dismiss(animated: true, completion: nil)
+        if (mode == CalculatorMode.Length) {
+            mode = CalculatorMode.Volume
+            titleLabel.text = "Volume Conversion Calculator"
+            fromUnits.text = volFromUnit.rawValue
+            toUnits.text = volToUnit.rawValue
         } else {
-            present(controller, animated: true, completion: nil)
+            mode = CalculatorMode.Length
+            titleLabel.text = "Length Conversion Calculator"
+            fromUnits.text = lenFromUnit.rawValue
+            toUnits.text = lenToUnit.rawValue
         }
     }
     
-    @IBAction func calculateLen(_ sender: UIButton) {
-        // If both text fields have values - display error message & erase text //
-        if (!(self.fromField.text?.isEmpty)! && !(self.toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: " Both text fields cannot contain values.",
-                                          message: "Please only fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            clear(sender)
+    @IBAction func calculate(_ sender: UIButton) {
+        if (mode == CalculatorMode.Length) {
+            calculateLen()
+        } else {
+            calculateVol()
         }
-            
-            // If no text fields have values - display error message //
-        else if ((self.fromField.text?.isEmpty)! && (self.toField.text?.isEmpty)!) {
+    }
+    
+    func calculateLen() {
+        // If no text fields have values - display error message //
+        if ((fromField.text?.isEmpty)! && (toField.text?.isEmpty)!) {
             let alert = UIAlertController(title: "Both text fields are empty.",
                                           message: "Please fill the first entry box!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
-    
-        }
-            // If the output area has values - display error message & erase text //
-        else if ((self.fromField.text?.isEmpty)! && !(self.toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: "Both text fields cannot contain values.",
-                                          message: "Please only fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        
+            present(alert, animated: true)
         }
             // Passes all test and is valid input format //
         else {
             var first: LengthUnit = LengthUnit.Meters
             var sec: LengthUnit = LengthUnit.Meters
             
-            if (self.fromUnits.text == "Meters") {
+            if (fromUnits.text == "Meters") {
                 first = LengthUnit.Meters
-            }else if (self.fromUnits.text == "Yards") {
+            } else if (fromUnits.text == "Yards") {
                 first = LengthUnit.Yards
-            }else if (self.fromUnits.text == "Miles"){
+            } else if (fromUnits.text == "Miles"){
                 first = LengthUnit.Miles
             }
             
-            if (self.toUnits.text == "Meters") {
+            if (toUnits.text == "Meters") {
                 sec = LengthUnit.Meters
-            }else if (self.toUnits.text == "Yards") {
+            } else if (toUnits.text == "Yards") {
                 sec = LengthUnit.Yards
-            }else if (self.toUnits.text == "Miles"){
+            } else if (toUnits.text == "Miles"){
                 sec = LengthUnit.Miles
             }
             
             let conv = LengthConversionKey(toUnits: sec, fromUnits: first)
-            if let fValue = Double(self.fromField.text!) {
-                self.toField.text = String(lengthConversionTable[conv]! * fValue)
+            if let fValue = Double(fromField.text!) {
+                toField.text = String(lengthConversionTable[conv]! * fValue)
             }
         }
     }
-     // ===================================================================================/
     
     // Calculation for Volume //
-    @IBAction func calculateVol(_ sender: UIButton) {
-        // If both text fields have values - display error message & erase text //
-        if (!(self.fromField.text?.isEmpty)! && !(self.toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: "Both text fields cannot contain values.",
-                                          message: "Please only fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            clear(sender)
-
-        }
-            // If no text fields have values - display error message //
-        else if ((self.fromField.text?.isEmpty)! && (self.toField.text?.isEmpty)!) {
+    func calculateVol() {
+        // If no text fields have values - display error message //
+        if ((fromField.text?.isEmpty)! && (toField.text?.isEmpty)!) {
             let alert = UIAlertController(title: "Both text fields are empty.",
                                           message: "Please fill the first entry box!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            present(alert, animated: true)
         
-        }
-            // If the output area has values - display error message & erase text //
-        else if ((self.fromField.text?.isEmpty)! && !(self.toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: "Output text fields cannot contain values.",
-                                          message: "Please only fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            //return
         }
             
             // Passed //
@@ -130,25 +110,25 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
             var first: VolumeUnit = VolumeUnit.Liters
             var sec: VolumeUnit = VolumeUnit.Liters
             
-            if (self.fromUnits.text == "Liters") {
+            if (fromUnits.text == "Liters") {
                 first = VolumeUnit.Liters
-            }else if (self.fromUnits.text == "Gallons") {
+            }else if (fromUnits.text == "Gallons") {
                 first = VolumeUnit.Gallons
-            }else if (self.fromUnits.text == "Quarts"){
+            }else if (fromUnits.text == "Quarts"){
                 first = VolumeUnit.Quarts
             }
             
-            if (self.toUnits.text == "Liters") {
+            if (toUnits.text == "Liters") {
                 sec = VolumeUnit.Liters
-            }else if (self.toUnits.text == "Gallons") {
+            }else if (toUnits.text == "Gallons") {
                 sec = VolumeUnit.Gallons
-            }else if (self.toUnits.text == "Quarts"){
+            }else if (toUnits.text == "Quarts"){
                 sec = VolumeUnit.Quarts
             }
             
             let conv = VolumeConversionKey(toUnits: sec, fromUnits: first)
-            if let fValue = Double(self.fromField.text!) {
-                self.toField.text = String(volumeConversionTable[conv]! * fValue)
+            if let fValue = Double(fromField.text!) {
+                toField.text = String(volumeConversionTable[conv]! * fValue)
             }
         }
     }
@@ -156,11 +136,11 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     
     
     @IBAction func clear(_ sender: UIButton) {
-        if (self.fromField.text?.isEmpty)! {
+        if !(fromField.text?.isEmpty)! {
             fromField.text = ""
         }
         
-        if (self.toField.text?.isEmpty)! {
+        if !(toField.text?.isEmpty)! {
             toField.text = ""
             
         }
@@ -197,7 +177,7 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dest = segue.destination as? ModeConversionView {
             dest.delegate = self
-            dest.modeSel = self.fromUnits.text == "Meters" || self.fromUnits.text == "Yards" || self.fromUnits.text == "Miles"
+            dest.isLength = mode == CalculatorMode.Length
             dest.fromUnits = fromUnits.text!
             dest.toUnits = toUnits.text!
         }
@@ -207,6 +187,51 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     func ChangeView(fromUnits: String, toUnits: String) {
         self.fromUnits.text = fromUnits
         self.toUnits.text = toUnits
+        
+        // persist previous chosen units
+        if (mode == CalculatorMode.Length) {
+            switch (fromUnits) {
+            case "Meters":
+                lenFromUnit = LengthUnit.Meters
+                break
+            case "Miles":
+                lenFromUnit = LengthUnit.Miles
+                break
+            default:
+                lenFromUnit = LengthUnit.Yards
+            }
+            switch (toUnits) {
+            case "Meters":
+                lenToUnit = LengthUnit.Meters
+                break
+            case "Miles":
+                lenToUnit = LengthUnit.Miles
+                break
+            default:
+                lenToUnit = LengthUnit.Yards
+            }
+        } else {
+            switch (fromUnits) {
+            case "Liters":
+                volFromUnit = VolumeUnit.Liters
+                break
+            case "Gallons":
+                volFromUnit = VolumeUnit.Gallons
+                break
+            default:
+                volFromUnit = VolumeUnit.Quarts
+            }
+            switch (toUnits) {
+            case "Liters":
+                volToUnit = VolumeUnit.Liters
+                break
+            case "Gallons":
+                volToUnit = VolumeUnit.Gallons
+                break
+            default:
+                volToUnit = VolumeUnit.Quarts
+            }
+        }
     }
     
   

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6zA-vK-ihu">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,125 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Length Conversion-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="length" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="Length Conversion" customClass="CalculatorViewController" customModule="HW3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDu-Ty-pfM">
-                                <rect key="frame" x="27" y="106" width="162" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shp-LZ-U6U">
-                                <rect key="frame" x="27" y="178" width="162" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aRR-8c-DO9" customClass="DecimalMinusTextField" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="27" y="135" width="162" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="clearTheOtherWithTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="A0z-un-eNu"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DX-rc-ked" customClass="DecimalMinusTextField" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="27" y="206" width="162" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="clearTheOtherWithTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="eQN-yo-Lvs"/>
-                                </connections>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fI1-5r-DtO">
-                                <rect key="frame" x="230" y="206" width="72" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scb-vd-aCA">
-                                <rect key="frame" x="47" y="266" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Calculate"/>
-                                <connections>
-                                    <action selector="calculateLen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVh-ZL-pkL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKP-7t-RTS">
-                                <rect key="frame" x="307" y="266" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Mode"/>
-                                <connections>
-                                    <action selector="changeMode:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Vf2-L4-Wyu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-8N-oWH">
-                                <rect key="frame" x="189" y="266" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Clear"/>
-                                <connections>
-                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7rc-u5-VJ0"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0W-D2-JMs">
-                                <rect key="frame" x="230" y="136" width="72" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Length Conversion Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvz-Xr-433">
-                                <rect key="frame" x="0.0" y="44" width="414" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-5m-Msg">
-                                <rect key="frame" x="157" y="755" width="100" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="FTU-PD-dfj" kind="popoverPresentation" popoverAnchorView="nhR-5m-Msg" id="HGn-Oh-hmc">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Utk-dM-ly5"/>
-                    <connections>
-                        <outlet property="calcButton" destination="Scb-vd-aCA" id="936-Ge-Rq1"/>
-                        <outlet property="clearButton" destination="Sde-8N-oWH" id="evf-xQ-30n"/>
-                        <outlet property="fromDelegate" destination="aRR-8c-DO9" id="d1d-Xg-cOa"/>
-                        <outlet property="fromField" destination="aRR-8c-DO9" id="Gjw-jq-mKc"/>
-                        <outlet property="fromLabel" destination="FDu-Ty-pfM" id="6pF-6N-bAc"/>
-                        <outlet property="fromUnits" destination="w0W-D2-JMs" id="kCc-Wi-y6m"/>
-                        <outlet property="modeButton" destination="gKP-7t-RTS" id="ayU-4v-Uln"/>
-                        <outlet property="settingButton" destination="nhR-5m-Msg" id="jbj-Gc-wt3"/>
-                        <outlet property="toDelegate" destination="1DX-rc-ked" id="IWa-Bk-PGT"/>
-                        <outlet property="toField" destination="1DX-rc-ked" id="Gk1-vy-YQK"/>
-                        <outlet property="toLabel" destination="shp-LZ-U6U" id="JZS-qB-kjx"/>
-                        <outlet property="toUnits" destination="fI1-5r-DtO" id="ZqM-PX-j3H"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="137.94642857142856"/>
-        </scene>
         <!--Mode Conversion View-->
         <scene sceneID="pRb-tw-YZS">
             <objects>
@@ -153,7 +34,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
-                                                    <action selector="cancelBtnWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="AbC-4B-3E6"/>
+                                                    <action selector="closeSettings:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="Sm7-lE-nkH"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -163,7 +44,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>
-                                                    <action selector="saveBtnWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="rjf-tR-lpL"/>
+                                                    <action selector="closeSettings:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="qus-hg-Kqq"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -204,10 +85,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="xf5-yn-4Pf"/>
                     <connections>
-                        <outlet property="fromL" destination="IXH-ft-ebS" id="ZON-61-86P"/>
+                        <outlet property="fromPicked" destination="IXH-ft-ebS" id="ZON-61-86P"/>
                         <outlet property="pick" destination="q0V-Yl-gtJ" id="Z0W-IG-Ddg"/>
                         <outlet property="screen" destination="aCX-mf-X9Y" id="Cw7-WT-Vgh"/>
-                        <outlet property="toL" destination="Itg-vf-YTM" id="YUK-Mo-dDq"/>
+                        <outlet property="toPicked" destination="Itg-vf-YTM" id="YUK-Mo-dDq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArJ-6V-fps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,7 +108,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
-                                    <action selector="calculateVol:" destination="6zA-vK-ihu" eventType="touchUpInside" id="cZt-H3-YEq"/>
+                                    <action selector="calculate:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="21w-KC-caH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imx-Xr-ai3">
@@ -235,7 +116,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
-                                    <action selector="clear:" destination="6zA-vK-ihu" eventType="touchUpInside" id="LVO-EM-wrS"/>
+                                    <action selector="clear:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="DaV-6E-cfu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-WQ-G5H">
@@ -243,7 +124,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Mode"/>
                                 <connections>
-                                    <action selector="changeMode:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="4MR-3d-pTm"/>
+                                    <action selector="changeMode:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="eZy-7s-SGL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-ps-uCl">
@@ -277,6 +158,9 @@
                                                 <rect key="contentStretch" x="0.69999999999999996" y="0.0" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="clearTheOtherWithTextField:" destination="6zA-vK-ihu" eventType="editingDidBegin" id="jDU-mg-eAg"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-34-hnm">
                                                 <rect key="frame" x="238" y="0.0" width="136" height="34"/>
@@ -300,7 +184,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="clearTheOtherWithTextField:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Onq-n3-i4b"/>
+                                                    <action selector="clearTheOtherWithTextField:" destination="6zA-vK-ihu" eventType="editingDidBegin" id="R2V-Au-rQ9"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-de-h4L">
@@ -328,12 +212,14 @@
                     <navigationItem key="navigationItem" id="H36-RF-i2y"/>
                     <connections>
                         <outlet property="calcButton" destination="Ai8-WP-dHC" id="2Td-oP-QjI"/>
+                        <outlet property="clearButton" destination="Imx-Xr-ai3" id="inT-C3-0Xj"/>
                         <outlet property="fromDelegate" destination="RSg-Jb-kgj" id="H6B-a7-TRW"/>
                         <outlet property="fromField" destination="RSg-Jb-kgj" id="Eua-gc-FFl"/>
                         <outlet property="fromLabel" destination="7gu-K0-KEm" id="JE0-VX-qPv"/>
                         <outlet property="fromUnits" destination="u1q-34-hnm" id="UdC-xE-Tf9"/>
                         <outlet property="modeButton" destination="Esy-WQ-G5H" id="hHU-lz-oxo"/>
                         <outlet property="settingButton" destination="SOH-ps-uCl" id="CAl-VR-Cey"/>
+                        <outlet property="titleLabel" destination="tDS-6o-yRY" id="sq7-JH-0cF"/>
                         <outlet property="toDelegate" destination="DzX-7Y-hQE" id="foH-Vf-lrm"/>
                         <outlet property="toField" destination="DzX-7Y-hQE" id="gaq-AZ-2SZ"/>
                         <outlet property="toLabel" destination="v14-fN-pju" id="7TQ-xk-cnr"/>
@@ -345,7 +231,4 @@
             <point key="canvasLocation" x="-510.14492753623193" y="137.94642857142856"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="HGn-Oh-hmc"/>
-    </inferredMetricsTieBreakers>
 </document>
