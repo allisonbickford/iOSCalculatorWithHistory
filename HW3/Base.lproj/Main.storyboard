@@ -34,7 +34,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                                 <connections>
-                                                    <action selector="closeSettings:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="Sm7-lE-nkH"/>
+                                                    <action selector="closeSettingsWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="cL8-Un-oYa"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -44,7 +44,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>
-                                                    <action selector="closeSettings:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="qus-hg-Kqq"/>
+                                                    <action selector="closeSettingsWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="IC1-br-SrM"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -85,10 +85,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="xf5-yn-4Pf"/>
                     <connections>
-                        <outlet property="fromPicked" destination="IXH-ft-ebS" id="ZON-61-86P"/>
+                        <outlet property="fromLabel" destination="IXH-ft-ebS" id="s3O-h4-lUo"/>
                         <outlet property="pick" destination="q0V-Yl-gtJ" id="Z0W-IG-Ddg"/>
                         <outlet property="screen" destination="aCX-mf-X9Y" id="Cw7-WT-Vgh"/>
-                        <outlet property="toPicked" destination="Itg-vf-YTM" id="YUK-Mo-dDq"/>
+                        <outlet property="toLabel" destination="Itg-vf-YTM" id="ywC-pX-FWV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArJ-6V-fps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

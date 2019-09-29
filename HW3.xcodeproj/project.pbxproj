@@ -15,7 +15,7 @@
 		A34C9DD023353CA6008EF8FB /* HW3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DCF23353CA6008EF8FB /* HW3UITests.swift */; };
 		A34C9DDE23353E7F008EF8FB /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */; };
 		A34C9DE223354221008EF8FB /* UnitsAndModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DE123354221008EF8FB /* UnitsAndModes.swift */; };
-		A3C773AF233E358F00005A7E /* ModeConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C773AE233E358E00005A7E /* ModeConversionView.swift */; };
+		A3D660522341682F00483D2F /* ModeConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D660512341682F00483D2F /* ModeConversionView.swift */; };
 		A3DE23182339362700A3F03B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */; };
 		A3DE23192339362800A3F03B /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */; };
 		A3DE23432339364E00A3F03B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34C9DB323353CA5008EF8FB /* Main.storyboard */; settings = {ASSET_TAGS = (1, ); }; };
@@ -55,7 +55,7 @@
 		A34C9DD123353CA6008EF8FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		A34C9DE123354221008EF8FB /* UnitsAndModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsAndModes.swift; sourceTree = "<group>"; };
-		A3C773AE233E358E00005A7E /* ModeConversionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeConversionView.swift; path = ../../../Documents/iOSCalculator/HW3/ModeConversionView.swift; sourceTree = "<group>"; };
+		A3D660512341682F00483D2F /* ModeConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeConversionView.swift; sourceTree = "<group>"; };
 		A3DE234A233938BA00A3F03B /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecimalMinusTextField.swift; path = ../../../Downloads/DecimalMinusTextField/DecimalMinusTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,6 @@
 		A34C9DAE23353CA5008EF8FB /* HW3 */ = {
 			isa = PBXGroup;
 			children = (
-				A3C773AE233E358E00005A7E /* ModeConversionView.swift */,
 				A34C9DB323353CA5008EF8FB /* Main.storyboard */,
 				A34C9DDD23353E7F008EF8FB /* CalculatorViewController.swift */,
 				A34C9DAF23353CA5008EF8FB /* AppDelegate.swift */,
@@ -116,6 +115,7 @@
 				A34C9DBB23353CA6008EF8FB /* Info.plist */,
 				A34C9DE123354221008EF8FB /* UnitsAndModes.swift */,
 				A3DE234A233938BA00A3F03B /* DecimalMinusTextField.swift */,
+				A3D660512341682F00483D2F /* ModeConversionView.swift */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 				A34C9DDE23353E7F008EF8FB /* CalculatorViewController.swift in Sources */,
 				A34C9DE223354221008EF8FB /* UnitsAndModes.swift in Sources */,
 				A34C9DB023353CA5008EF8FB /* AppDelegate.swift in Sources */,
-				A3C773AF233E358F00005A7E /* ModeConversionView.swift in Sources */,
+				A3D660522341682F00483D2F /* ModeConversionView.swift in Sources */,
 				A3DE234B233938BA00A3F03B /* DecimalMinusTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
