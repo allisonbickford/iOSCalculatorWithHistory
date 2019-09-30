@@ -29,7 +29,6 @@ class ModeConversionView: UIViewController{
     @IBOutlet weak var toLabel: UILabel!
     
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
