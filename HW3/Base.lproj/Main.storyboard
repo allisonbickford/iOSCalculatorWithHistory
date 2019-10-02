@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lv-Jg-EDa">
-                                <rect key="frame" x="0.0" y="44" width="0.0" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="g3d-d3-uNc"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Settings" id="c4B-9l-fSZ">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="3Ts-RG-Bve">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F0N-ve-fnP">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F0N-ve-fnP">
                                                 <rect key="frame" x="20" y="13" width="48" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
@@ -35,7 +35,7 @@
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="orm-tc-Uhu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Iod-Ud-MTq">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Iod-Ud-MTq">
                                                 <rect key="frame" x="360" y="13" width="34" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Save"/>
@@ -87,7 +87,7 @@
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-Yl-gtJ">
-                                <rect key="frame" x="0.0" y="708" width="0.0" height="100"/>
+                                <rect key="frame" x="0.0" y="708" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GIc-SD-QDj"/>
                                 </constraints>
@@ -131,39 +131,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imx-Xr-ai3" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="115" y="208" width="0.0" height="30"/>
+                                <rect key="frame" x="144" y="208.33333333333334" width="95.666666666666686" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clear:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="DaV-6E-cfu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-ps-uCl" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="8" y="824" width="398" height="30"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="FTU-PD-dfj" kind="show" id="oPF-hX-wRh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume Conversion Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDS-6o-yRY" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="44" width="383.66666666666669" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NnK-6Q-i1y">
-                                <rect key="frame" x="20" y="64.333333333333314" width="374" height="136"/>
+                                <rect key="frame" x="20" y="64.333333333333314" width="366.66666666666669" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-K0-KEm" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="366.66666666666669" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s9f-Ne-Dbc">
-                                        <rect key="frame" x="0.0" y="34" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="34" width="366.66666666666669" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter volume in Gallons" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSg-Jb-kgj" customClass="ConversionCalcTextField" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179.33333333333334" height="34"/>
                                                 <rect key="contentStretch" x="0.69999999999999996" y="0.0" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -177,7 +170,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-34-hnm" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="183" height="34"/>
+                                                <rect key="frame" x="187.33333333333331" y="0.0" width="179.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -185,16 +178,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v14-fN-pju" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68.000000000000014" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="68.000000000000014" width="366.66666666666669" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4B4-fC-30t">
-                                        <rect key="frame" x="0.0" y="102.00000000000001" width="374" height="33.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="102.00000000000001" width="366.66666666666669" height="33.999999999999986"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter volume in Liters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzX-7Y-hQE" customClass="ConversionCalcTextField" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179.33333333333334" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -202,7 +195,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-de-h4L" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="191" y="0.0" width="183" height="34"/>
+                                                <rect key="frame" x="187.33333333333331" y="0.0" width="179.33333333333331" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -212,37 +205,48 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai8-WP-dHC" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="43" y="208" width="0.0" height="30"/>
+                                <rect key="frame" x="20" y="208.33333333333334" width="96" height="30"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="calculate:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="21w-KC-caH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-WQ-G5H" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="332" y="208" width="0.0" height="30"/>
+                                <rect key="frame" x="267.66666666666669" y="208.33333333333334" width="96" height="30"/>
                                 <state key="normal" title="Mode"/>
                                 <connections>
                                     <action selector="changeMode:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="eZy-7s-SGL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-ps-uCl" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
+                                <rect key="frame" x="157" y="832" width="101.66666666666669" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="FTU-PD-dfj" kind="show" id="oPF-hX-wRh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Ai8-WP-dHC" firstAttribute="top" secondItem="NnK-6Q-i1y" secondAttribute="bottom" constant="8" symbolic="YES" id="05c-mJ-25H"/>
-                            <constraint firstItem="SOH-ps-uCl" firstAttribute="leading" secondItem="QE5-BA-y6e" secondAttribute="leading" constant="8" id="42c-cQ-QNZ"/>
-                            <constraint firstItem="Esy-WQ-G5H" firstAttribute="leading" secondItem="Imx-Xr-ai3" secondAttribute="trailing" constant="8" symbolic="YES" id="AR9-T8-UxT"/>
+                            <constraint firstAttribute="bottom" secondItem="SOH-ps-uCl" secondAttribute="bottom" constant="20" symbolic="YES" id="7RX-JN-1ot"/>
+                            <constraint firstItem="SOH-ps-uCl" firstAttribute="centerX" secondItem="TK7-7K-TKl" secondAttribute="centerX" id="CB8-qn-ob1"/>
                             <constraint firstItem="Imx-Xr-ai3" firstAttribute="top" secondItem="NnK-6Q-i1y" secondAttribute="bottom" constant="8" symbolic="YES" id="DGW-GL-ATE"/>
                             <constraint firstItem="tDS-6o-yRY" firstAttribute="top" secondItem="QE5-BA-y6e" secondAttribute="top" id="DZD-kE-m0v"/>
-                            <constraint firstItem="QE5-BA-y6e" firstAttribute="bottom" secondItem="SOH-ps-uCl" secondAttribute="bottom" constant="8" id="Ll7-WF-ebj"/>
+                            <constraint firstItem="Imx-Xr-ai3" firstAttribute="centerX" secondItem="TK7-7K-TKl" secondAttribute="centerX" id="HKU-kS-z0a"/>
+                            <constraint firstItem="Esy-WQ-G5H" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="Myn-nK-H5y"/>
                             <constraint firstItem="NnK-6Q-i1y" firstAttribute="trailing" secondItem="Esy-WQ-G5H" secondAttribute="trailing" constant="23" id="Nbe-ov-dGl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NnK-6Q-i1y" secondAttribute="trailing" id="OoW-eq-W3u"/>
+                            <constraint firstItem="SOH-ps-uCl" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="Q1v-5c-tb8"/>
                             <constraint firstItem="NnK-6Q-i1y" firstAttribute="top" secondItem="tDS-6o-yRY" secondAttribute="bottom" id="ScJ-W2-npD"/>
-                            <constraint firstItem="Imx-Xr-ai3" firstAttribute="leading" secondItem="Ai8-WP-dHC" secondAttribute="trailing" constant="8" symbolic="YES" id="cbF-tB-dan"/>
+                            <constraint firstItem="Imx-Xr-ai3" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="XgE-l7-i98"/>
+                            <constraint firstAttribute="trailing" secondItem="Esy-WQ-G5H" secondAttribute="trailing" constant="20" symbolic="YES" id="bHm-ik-bH4"/>
                             <constraint firstItem="NnK-6Q-i1y" firstAttribute="leading" secondItem="TK7-7K-TKl" secondAttribute="leadingMargin" id="dhQ-2F-DFy"/>
+                            <constraint firstItem="Ai8-WP-dHC" firstAttribute="centerX" secondItem="TK7-7K-TKl" secondAttribute="centerX" id="hbZ-4Y-d5M"/>
                             <constraint firstItem="tDS-6o-yRY" firstAttribute="leading" secondItem="QE5-BA-y6e" secondAttribute="leading" id="jJn-ex-wAs"/>
+                            <constraint firstItem="Ai8-WP-dHC" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="kdq-ZJ-VVO"/>
                             <constraint firstItem="Esy-WQ-G5H" firstAttribute="top" secondItem="NnK-6Q-i1y" secondAttribute="bottom" constant="8" symbolic="YES" id="nMJ-7m-qd9"/>
-                            <constraint firstItem="Ai8-WP-dHC" firstAttribute="leading" secondItem="NnK-6Q-i1y" secondAttribute="leading" constant="23" id="p6L-nY-rgw"/>
                             <constraint firstItem="tDS-6o-yRY" firstAttribute="trailing" secondItem="QE5-BA-y6e" secondAttribute="trailing" id="rhu-3d-egb"/>
-                            <constraint firstItem="QE5-BA-y6e" firstAttribute="trailing" secondItem="SOH-ps-uCl" secondAttribute="trailing" constant="8" id="sFG-lF-nJ2"/>
+                            <constraint firstItem="Ai8-WP-dHC" firstAttribute="leading" secondItem="TK7-7K-TKl" secondAttribute="leading" constant="20" symbolic="YES" id="tYy-XK-npm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QE5-BA-y6e"/>
                     </view>
