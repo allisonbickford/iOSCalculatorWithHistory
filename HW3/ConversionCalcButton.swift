@@ -16,8 +16,8 @@ class ConversionCalcButton: UIButton {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.backgroundColor = BACKGROUND_COLOR
-        self.tintColor = FOREGROUND_COLOR
+        self.backgroundColor = FOREGROUND_COLOR
+        self.tintColor = BACKGROUND_COLOR
         self.layer.cornerRadius = 5.0
     }
 }
