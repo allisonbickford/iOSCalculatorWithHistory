@@ -21,19 +21,23 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     var lenFromUnit = LengthUnit.Miles
     var lenToUnit = LengthUnit.Meters
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var fromLabel: UILabel!
-    @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var fromUnits: UILabel!
-    @IBOutlet weak var toUnits: UILabel!
-    @IBOutlet weak var fromField: DecimalMinusTextField!
+    @IBOutlet weak var titleLabel: ConversionCalcLabel!
+    @IBOutlet weak var fromLabel: ConversionCalcLabel!
+    @IBOutlet weak var toLabel: ConversionCalcLabel!
+    @IBOutlet weak var fromUnits: ConversionCalcLabel!
+    @IBOutlet weak var toUnits: ConversionCalcLabel!
+    @IBOutlet weak var fromField: ConversionCalcTextField!
     @IBOutlet weak var fromDelegate: UITextFieldDelegate!
-    @IBOutlet weak var toField: DecimalMinusTextField!
+    @IBOutlet weak var toField: ConversionCalcTextField!
     @IBOutlet weak var toDelegate: UITextFieldDelegate!
-    @IBOutlet weak var calcButton: UIButton!
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var modeButton: UIButton!
-    @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var calcButton: ConversionCalcButton!
+    @IBOutlet weak var clearButton: ConversionCalcButton!
+    @IBOutlet weak var modeButton: ConversionCalcButton!
+    @IBOutlet weak var settingButton: ConversionCalcButton!
+    
+    
+    let BACKGROUND_COLOR = UIColor.init(red:0.000, green:0.369, blue:0.420,
+                                    alpha:1.00) // Blueish
     
     @IBAction func changeMode(_ sender: UIButton) {
         if (mode == CalculatorMode.Length) {
@@ -41,11 +45,15 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
             titleLabel.text = "Volume Conversion Calculator"
             fromUnits.text = volFromUnit.rawValue
             toUnits.text = volToUnit.rawValue
+            fromField.placeholder = "Enter volume in \(volFromUnit.rawValue)"
+            toField.placeholder = "Enter volume in \(volToUnit.rawValue)"
         } else {
             mode = CalculatorMode.Length
             titleLabel.text = "Length Conversion Calculator"
             fromUnits.text = lenFromUnit.rawValue
             toUnits.text = lenToUnit.rawValue
+            fromField.placeholder = "Enter length in \(lenFromUnit.rawValue)"
+            toField.placeholder = "Enter length in \(lenToUnit.rawValue)"
         }
     }
     
@@ -168,6 +176,7 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = BACKGROUND_COLOR
     }
     
     override func didReceiveMemoryWarning() {
@@ -187,6 +196,13 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     func ChangeView(fromUnits: String, toUnits: String) {
         self.fromUnits.text = fromUnits
         self.toUnits.text = toUnits
+        if (mode == CalculatorMode.Length) {
+            fromField.placeholder = "Enter length in \(fromUnits)"
+            toField.placeholder = "Enter length in \(toUnits)"
+        } else {
+            fromField.placeholder = "Enter volume in \(fromUnits)"
+            toField.placeholder = "Enter volume in \(toUnits)"
+        }
         
         // persist previous chosen units
         if (mode == CalculatorMode.Length) {

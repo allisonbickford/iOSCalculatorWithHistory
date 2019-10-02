@@ -20,5 +20,11 @@ class ConversionCalcTextField : DecimalMinusTextField {
         self.textColor = FOREGROUND_COLOR
         self.layer.borderColor = FOREGROUND_COLOR.cgColor
         self.layer.borderWidth = 1
+        self.layer.cornerRadius = 5.0
+    }
+    
+    override func drawPlaceholder(in rect: CGRect) {
+        super.drawPlaceholder(in: rect)
+        self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: FOREGROUND_COLOR])
     }
 }
