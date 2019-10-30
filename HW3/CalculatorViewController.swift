@@ -14,7 +14,11 @@ import UIKit
 class CalculatorViewController: UIViewController, ModeConversionViewDelegate, HistoryTableViewControllerDelegate {
     
     var mode: CalculatorMode = CalculatorMode.Volume
-    var entries : [Conversion] = []
+    var entries : [Conversion] = [
+            Conversion(fromVal: 1, toVal: 1760, mode: .Length, fromUnits: LengthUnit.Miles.rawValue, toUnits:
+    LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
+            Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
+    VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
     
     var volFromUnit = VolumeUnit.Gallons
     var volToUnit = VolumeUnit.Liters
