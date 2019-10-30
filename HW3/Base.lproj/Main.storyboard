@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6zA-vK-ihu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J94-Gt-ENb">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,41 +14,17 @@
             <objects>
                 <viewController id="FTU-PD-dfj" customClass="ModeConversionView" customModule="HW3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aCX-mf-X9Y" userLabel="View" customClass="UILabel" customModule="HW3" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lv-Jg-EDa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-Yl-gtJ">
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="g3d-d3-uNc"/>
+                                    <constraint firstAttribute="height" constant="100" id="GIc-SD-QDj"/>
                                 </constraints>
-                                <items>
-                                    <navigationItem title="Settings" id="c4B-9l-fSZ">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="3Ts-RG-Bve">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F0N-ve-fnP">
-                                                <rect key="frame" x="20" y="13" width="48" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Cancel"/>
-                                                <connections>
-                                                    <action selector="closeSettingsWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="cL8-Un-oYa"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="orm-tc-Uhu">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Iod-Ud-MTq">
-                                                <rect key="frame" x="360" y="13" width="34" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Save"/>
-                                                <connections>
-                                                    <action selector="closeSettingsWithSender:" destination="FTU-PD-dfj" eventType="primaryActionTriggered" id="IC1-br-SrM"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NVn-iT-zhN">
-                                <rect key="frame" x="8" y="108.00000000000001" width="398" height="48.666666666666671"/>
+                                <rect key="frame" x="8" y="98" width="398" height="48.666666666666657"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1VG-Kk-Utd">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20.333333333333332"/>
@@ -68,7 +44,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CE2-jk-bdA">
-                                        <rect key="frame" x="0.0" y="28.333333333333343" width="398" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="28.333333333333329" width="398" height="20.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Units:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0J-Us-AeB">
                                                 <rect key="frame" x="0.0" y="0.0" width="195" height="20.333333333333332"/>
@@ -86,31 +62,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0V-Yl-gtJ">
-                                <rect key="frame" x="0.0" y="708" width="414" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="GIc-SD-QDj"/>
-                                </constraints>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <accessibility key="accessibilityConfiguration">
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="8Lv-Jg-EDa" firstAttribute="top" secondItem="9TP-8W-CYb" secondAttribute="top" constant="44" id="5yG-TF-Oyn"/>
-                            <constraint firstItem="8Lv-Jg-EDa" firstAttribute="centerX" secondItem="NVn-iT-zhN" secondAttribute="centerX" id="6CZ-QY-jXU"/>
-                            <constraint firstItem="9TP-8W-CYb" firstAttribute="trailing" secondItem="NVn-iT-zhN" secondAttribute="trailing" constant="8" id="A7O-PS-qKz"/>
-                            <constraint firstItem="NVn-iT-zhN" firstAttribute="top" secondItem="8Lv-Jg-EDa" secondAttribute="bottom" constant="20" id="Pbq-pL-dRI"/>
-                            <constraint firstItem="q0V-Yl-gtJ" firstAttribute="trailing" secondItem="8Lv-Jg-EDa" secondAttribute="trailing" id="SpB-hL-zla"/>
-                            <constraint firstItem="q0V-Yl-gtJ" firstAttribute="leading" secondItem="8Lv-Jg-EDa" secondAttribute="leading" id="bNc-ft-LBs"/>
+                            <constraint firstItem="NVn-iT-zhN" firstAttribute="top" secondItem="9TP-8W-CYb" secondAttribute="top" constant="10" id="F2K-Cv-6Hp"/>
+                            <constraint firstItem="9TP-8W-CYb" firstAttribute="trailing" secondItem="NVn-iT-zhN" secondAttribute="trailing" constant="8" id="JTJ-cT-WrI"/>
+                            <constraint firstItem="q0V-Yl-gtJ" firstAttribute="leading" secondItem="9TP-8W-CYb" secondAttribute="leading" id="nEh-qO-vFQ"/>
                             <constraint firstItem="NVn-iT-zhN" firstAttribute="leading" secondItem="9TP-8W-CYb" secondAttribute="leading" constant="8" id="r3v-q8-aGa"/>
-                            <constraint firstItem="8Lv-Jg-EDa" firstAttribute="leading" secondItem="9TP-8W-CYb" secondAttribute="leading" id="rwX-N0-Qbj"/>
+                            <constraint firstItem="9TP-8W-CYb" firstAttribute="trailing" secondItem="q0V-Yl-gtJ" secondAttribute="trailing" id="wfI-5o-7GF"/>
                             <constraint firstItem="q0V-Yl-gtJ" firstAttribute="bottom" secondItem="9TP-8W-CYb" secondAttribute="bottom" id="xeQ-aP-euQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9TP-8W-CYb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xf5-yn-4Pf"/>
+                    <navigationItem key="navigationItem" id="1r1-oe-iW6"/>
                     <connections>
                         <outlet property="fromLabel" destination="IXH-ft-ebS" id="s3O-h4-lUo"/>
                         <outlet property="pick" destination="q0V-Yl-gtJ" id="Z0W-IG-Ddg"/>
@@ -120,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArJ-6V-fps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782.14285714285711" y="143.47826086956522"/>
+            <point key="canvasLocation" x="381" y="138"/>
         </scene>
         <!--Volume Conversion-->
         <scene sceneID="eJj-qV-wPZ">
@@ -131,32 +98,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imx-Xr-ai3" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="144" y="208.33333333333334" width="95.666666666666686" height="30"/>
+                                <rect key="frame" x="156.33333333333334" y="252.33333333333337" width="103.33333333333334" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="clear:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="DaV-6E-cfu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume Conversion Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDS-6o-yRY" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="383.66666666666669" height="20.333333333333329"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NnK-6Q-i1y">
-                                <rect key="frame" x="20" y="64.333333333333314" width="366.66666666666669" height="136"/>
+                                <rect key="frame" x="20" y="108.33333333333331" width="374" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gu-K0-KEm" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="366.66666666666669" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s9f-Ne-Dbc">
-                                        <rect key="frame" x="0.0" y="34" width="366.66666666666669" height="34"/>
+                                        <rect key="frame" x="0.0" y="34.000000000000014" width="374" height="34"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter volume in Gallons" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RSg-Jb-kgj" customClass="ConversionCalcTextField" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="179.33333333333334" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
                                                 <rect key="contentStretch" x="0.69999999999999996" y="0.0" width="1" height="1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -170,7 +137,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-34-hnm" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="187.33333333333331" y="0.0" width="179.33333333333331" height="34"/>
+                                                <rect key="frame" x="191" y="0.0" width="183" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -178,16 +145,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v14-fN-pju" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="68.000000000000014" width="366.66666666666669" height="34"/>
+                                        <rect key="frame" x="0.0" y="68.000000000000014" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4B4-fC-30t">
-                                        <rect key="frame" x="0.0" y="102.00000000000001" width="366.66666666666669" height="33.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="102.00000000000001" width="374" height="33.999999999999986"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter volume in Liters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DzX-7Y-hQE" customClass="ConversionCalcTextField" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="179.33333333333334" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -195,7 +162,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIn-de-h4L" customClass="ConversionCalcLabel" customModule="HW3" customModuleProvider="target">
-                                                <rect key="frame" x="187.33333333333331" y="0.0" width="179.33333333333331" height="34"/>
+                                                <rect key="frame" x="191" y="0.0" width="183" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -205,38 +172,29 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai8-WP-dHC" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="20" y="208.33333333333334" width="96" height="30"/>
+                                <rect key="frame" x="20.000000000000007" y="252.33333333333337" width="103.66666666666669" height="30"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="calculate:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="21w-KC-caH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esy-WQ-G5H" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="267.66666666666669" y="208.33333333333334" width="96" height="30"/>
+                                <rect key="frame" x="290.66666666666669" y="252.33333333333337" width="103.33333333333331" height="30"/>
                                 <state key="normal" title="Mode"/>
                                 <connections>
                                     <action selector="changeMode:" destination="6zA-vK-ihu" eventType="primaryActionTriggered" id="eZy-7s-SGL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOH-ps-uCl" customClass="ConversionCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="157" y="832" width="101.66666666666669" height="30"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="FTU-PD-dfj" kind="show" id="oPF-hX-wRh"/>
-                                </connections>
-                            </button>
                         </subviews>
+                        <color key="backgroundColor" red="0.94741434010000003" green="0.94741434010000003" blue="0.94741434010000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ai8-WP-dHC" firstAttribute="top" secondItem="NnK-6Q-i1y" secondAttribute="bottom" constant="8" symbolic="YES" id="05c-mJ-25H"/>
-                            <constraint firstAttribute="bottom" secondItem="SOH-ps-uCl" secondAttribute="bottom" constant="20" symbolic="YES" id="7RX-JN-1ot"/>
-                            <constraint firstItem="SOH-ps-uCl" firstAttribute="centerX" secondItem="TK7-7K-TKl" secondAttribute="centerX" id="CB8-qn-ob1"/>
                             <constraint firstItem="Imx-Xr-ai3" firstAttribute="top" secondItem="NnK-6Q-i1y" secondAttribute="bottom" constant="8" symbolic="YES" id="DGW-GL-ATE"/>
                             <constraint firstItem="tDS-6o-yRY" firstAttribute="top" secondItem="QE5-BA-y6e" secondAttribute="top" id="DZD-kE-m0v"/>
                             <constraint firstItem="Imx-Xr-ai3" firstAttribute="centerX" secondItem="TK7-7K-TKl" secondAttribute="centerX" id="HKU-kS-z0a"/>
+                            <constraint firstItem="Esy-WQ-G5H" firstAttribute="leading" secondItem="Imx-Xr-ai3" secondAttribute="trailing" constant="30.670000000000002" id="LXI-r7-cYE"/>
                             <constraint firstItem="Esy-WQ-G5H" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="Myn-nK-H5y"/>
-                            <constraint firstItem="NnK-6Q-i1y" firstAttribute="trailing" secondItem="Esy-WQ-G5H" secondAttribute="trailing" constant="23" id="Nbe-ov-dGl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NnK-6Q-i1y" secondAttribute="trailing" id="OoW-eq-W3u"/>
-                            <constraint firstItem="SOH-ps-uCl" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="Q1v-5c-tb8"/>
                             <constraint firstItem="NnK-6Q-i1y" firstAttribute="top" secondItem="tDS-6o-yRY" secondAttribute="bottom" id="ScJ-W2-npD"/>
                             <constraint firstItem="Imx-Xr-ai3" firstAttribute="width" secondItem="QE5-BA-y6e" secondAttribute="width" multiplier="0.25" id="XgE-l7-i98"/>
                             <constraint firstAttribute="trailing" secondItem="Esy-WQ-G5H" secondAttribute="trailing" constant="20" symbolic="YES" id="bHm-ik-bH4"/>
@@ -250,7 +208,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QE5-BA-y6e"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H36-RF-i2y"/>
+                    <navigationItem key="navigationItem" id="2OL-Gr-XAH">
+                        <barButtonItem key="leftBarButtonItem" title="History" id="mMK-2X-Pnv">
+                            <connections>
+                                <segue destination="sYg-cy-ffT" kind="push" identifier="historySegue" id="eTI-vW-aB8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="tB5-Ee-yAZ">
+                            <connections>
+                                <segue destination="FTU-PD-dfj" kind="push" identifier="settingsSegue" id="utj-KA-tcf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calcButton" destination="Ai8-WP-dHC" id="2Td-oP-QjI"/>
                         <outlet property="clearButton" destination="Imx-Xr-ai3" id="inT-C3-0Xj"/>
@@ -259,7 +228,6 @@
                         <outlet property="fromLabel" destination="7gu-K0-KEm" id="JE0-VX-qPv"/>
                         <outlet property="fromUnits" destination="u1q-34-hnm" id="UdC-xE-Tf9"/>
                         <outlet property="modeButton" destination="Esy-WQ-G5H" id="hHU-lz-oxo"/>
-                        <outlet property="settingButton" destination="SOH-ps-uCl" id="CAl-VR-Cey"/>
                         <outlet property="titleLabel" destination="tDS-6o-yRY" id="sq7-JH-0cF"/>
                         <outlet property="toDelegate" destination="DzX-7Y-hQE" id="foH-Vf-lrm"/>
                         <outlet property="toField" destination="DzX-7Y-hQE" id="gaq-AZ-2SZ"/>
@@ -270,6 +238,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAe-8Q-Yoh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-510.14492753623193" y="137.94642857142856"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="pkD-Tr-xDs">
+            <objects>
+                <tableViewController id="CuF-47-aXF" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XiY-ZU-2mL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uIq-Bq-WIw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uIq-Bq-WIw" id="sKW-aj-ghO">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CuF-47-aXF" id="0br-Ky-rDc"/>
+                            <outlet property="delegate" destination="CuF-47-aXF" id="JNu-3A-liZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="XMl-Hg-0Ya"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aby-LI-iYQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-929" y="783"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vuX-44-J9O">
+            <objects>
+                <navigationController id="J94-Gt-ENb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gPR-70-oFI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6zA-vK-ihu" kind="relationship" relationship="rootViewController" id="Rcj-vs-d9A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1a-92-Zok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-930" y="-536"/>
+        </scene>
+        <!--History Table View Controller-->
+        <scene sceneID="h6n-Zl-mpo">
+            <objects>
+                <tableViewController id="sYg-cy-ffT" customClass="HistoryTableViewController" customModule="HW3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="XE1-Qu-nfx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellId" textLabel="SP4-Su-p1l" detailTextLabel="BVd-b4-Hna" style="IBUITableViewCellStyleSubtitle" id="XjR-a6-lFZ">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XjR-a6-lFZ" id="L55-pV-HB3">
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="55.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SP4-Su-p1l">
+                                            <rect key="frame" x="20.000000000000004" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BVd-b4-Hna">
+                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sYg-cy-ffT" id="Xmi-bl-qfD"/>
+                            <outlet property="delegate" destination="sYg-cy-ffT" id="Off-iu-rpe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="tpf-UY-ksM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTX-ju-zY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1396" y="138"/>
         </scene>
     </scenes>
 </document>
