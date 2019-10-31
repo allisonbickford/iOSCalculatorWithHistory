@@ -55,6 +55,7 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate, Hi
             toUnits.text = volToUnit.rawValue
             fromField.placeholder = "Enter volume in \(volFromUnit.rawValue)"
             toField.placeholder = "Enter volume in \(volToUnit.rawValue)"
+            
         } else {
             mode = CalculatorMode.Length
             titleLabel.text = "Length Conversion Calculator"
