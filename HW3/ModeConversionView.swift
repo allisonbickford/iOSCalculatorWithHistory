@@ -63,7 +63,7 @@ class ModeConversionView: UIViewController{
     
     @IBAction func closeSettings(sender: UIButton!) {
         viewWillDisappear(true)
-        dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

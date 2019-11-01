@@ -11,9 +11,14 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
+class CalculatorViewController: UIViewController, ModeConversionViewDelegate, HistoryTableViewControllerDelegate {
     
     var mode: CalculatorMode = CalculatorMode.Volume
+    var entries : [Conversion] = [
+            Conversion(fromVal: 1, toVal: 1760, mode: .Length, fromUnits: LengthUnit.Miles.rawValue, toUnits:
+    LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
+            Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
+    VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
     
     var volFromUnit = VolumeUnit.Gallons
     var volToUnit = VolumeUnit.Liters
@@ -50,6 +55,7 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
             toUnits.text = volToUnit.rawValue
             fromField.placeholder = "Enter volume in \(volFromUnit.rawValue)"
             toField.placeholder = "Enter volume in \(volToUnit.rawValue)"
+            
         } else {
             mode = CalculatorMode.Length
             titleLabel.text = "Length Conversion Calculator"
@@ -61,89 +67,75 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     }
     
     @IBAction func calculate(_ sender: UIButton) {
-        if (mode == CalculatorMode.Length) {
-            calculateLen()
-        } else {
-            calculateVol()
+        // determine source value of data for conversion and dest value for conversion
+        var dest : UITextField?
+
+        var val = ""
+        var toVal = 0.0
+        if let fromVal = fromField.text {
+            if fromVal != "" {
+                val = fromVal
+                dest = toField
+            }
         }
+        if let toVal = toField.text {
+            if toVal != "" {
+                val = toVal
+                dest = fromField
+            }
+        }
+        if dest != nil {
+            switch(mode) {
+            case .Length:
+                var fUnits, tUnits : LengthUnit
+                if dest == toField {
+                    fUnits = LengthUnit(rawValue: fromUnits.text!)!
+                    tUnits = LengthUnit(rawValue: toUnits.text!)!
+                } else {
+                    fUnits = LengthUnit(rawValue: toUnits.text!)!
+                    tUnits = LengthUnit(rawValue: fromUnits.text!)!
+                }
+                if let fromVal = Double(val) {
+                    let convKey =  LengthConversionKey(toUnits: tUnits, fromUnits: fUnits)
+                    toVal = fromVal * lengthConversionTable[convKey]!;
+                    dest?.text = "\(toVal)"
+                    
+                    entries.append(Conversion(
+                        fromVal: fromVal,
+                        toVal: toVal,
+                        mode: mode,
+                        fromUnits: "\(fUnits)",
+                        toUnits: "\(tUnits)",
+                        timestamp: Date())
+                    )
+                }
+            case .Volume:
+                var fUnits, tUnits : VolumeUnit
+                if dest == toField {
+                    fUnits = VolumeUnit(rawValue: fromUnits.text!)!
+                    tUnits = VolumeUnit(rawValue: toUnits.text!)!
+                } else {
+                    fUnits = VolumeUnit(rawValue: toUnits.text!)!
+                    tUnits = VolumeUnit(rawValue: fromUnits.text!)!
+                }
+                if let fromVal = Double(val) {
+                    let convKey =  VolumeConversionKey(toUnits: tUnits, fromUnits: fUnits)
+                    toVal = fromVal * volumeConversionTable[convKey]!;
+                    dest?.text = "\(toVal)"
+                    
+                    entries.append(Conversion(
+                        fromVal: fromVal,
+                        toVal: toVal,
+                        mode: mode,
+                        fromUnits: "\(fUnits)",
+                        toUnits: "\(tUnits)",
+                        timestamp: Date())
+                    )
+                }
+            }
+        }
+        self.view.endEditing(true)
     }
-    
-    func calculateLen() {
-        // If no text fields have values - display error message //
-        if ((fromField.text?.isEmpty)! && (toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: "Both text fields are empty.",
-                                          message: "Please fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            present(alert, animated: true)
-        }
-            // Passes all test and is valid input format //
-        else {
-            var first: LengthUnit = LengthUnit.Meters
-            var sec: LengthUnit = LengthUnit.Meters
-            
-            if (fromUnits.text == "Meters") {
-                first = LengthUnit.Meters
-            } else if (fromUnits.text == "Yards") {
-                first = LengthUnit.Yards
-            } else if (fromUnits.text == "Miles"){
-                first = LengthUnit.Miles
-            }
-            
-            if (toUnits.text == "Meters") {
-                sec = LengthUnit.Meters
-            } else if (toUnits.text == "Yards") {
-                sec = LengthUnit.Yards
-            } else if (toUnits.text == "Miles"){
-                sec = LengthUnit.Miles
-            }
-            
-            let conv = LengthConversionKey(toUnits: sec, fromUnits: first)
-            if let fValue = Double(fromField.text!) {
-                toField.text = String(lengthConversionTable[conv]! * fValue)
-            }
-        }
-    }
-    
-    // Calculation for Volume //
-    func calculateVol() {
-        // If no text fields have values - display error message //
-        if ((fromField.text?.isEmpty)! && (toField.text?.isEmpty)!) {
-            let alert = UIAlertController(title: "Both text fields are empty.",
-                                          message: "Please fill the first entry box!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Close Alert", style: .default, handler: nil))
-            present(alert, animated: true)
-        
-        }
-            
-            // Passed //
-        else {
-            
-            var first: VolumeUnit = VolumeUnit.Liters
-            var sec: VolumeUnit = VolumeUnit.Liters
-            
-            if (fromUnits.text == "Liters") {
-                first = VolumeUnit.Liters
-            }else if (fromUnits.text == "Gallons") {
-                first = VolumeUnit.Gallons
-            }else if (fromUnits.text == "Quarts"){
-                first = VolumeUnit.Quarts
-            }
-            
-            if (toUnits.text == "Liters") {
-                sec = VolumeUnit.Liters
-            }else if (toUnits.text == "Gallons") {
-                sec = VolumeUnit.Gallons
-            }else if (toUnits.text == "Quarts"){
-                sec = VolumeUnit.Quarts
-            }
-            
-            let conv = VolumeConversionKey(toUnits: sec, fromUnits: first)
-            if let fValue = Double(fromField.text!) {
-                toField.text = String(volumeConversionTable[conv]! * fValue)
-            }
-        }
-    }
-     // ===================================================================================/
     
     
     @IBAction func clear(_ sender: UIButton) {
@@ -189,11 +181,18 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dest = segue.destination as? ModeConversionView {
-            dest.delegate = self
-            dest.isLength = mode == CalculatorMode.Length
-            dest.fromUnits = fromUnits.text!
-            dest.toUnits = toUnits.text!
+        if segue.identifier == "settingsSegue" {
+            if let dest = segue.destination as? ModeConversionView {
+                dest.delegate = self
+                dest.isLength = mode == CalculatorMode.Length
+                dest.fromUnits = fromUnits.text!
+                dest.toUnits = toUnits.text!
+            }
+        } else if (segue.identifier == "historySegue") {
+            if let dest = segue.destination as? HistoryTableViewController {
+                dest.entries = entries
+                dest.historyDelegate = self
+            }
         }
     }
     
@@ -255,5 +254,21 @@ class CalculatorViewController: UIViewController, ModeConversionViewDelegate {
         }
     }
     
-  
+    func selectEntry(entry: Conversion) {
+        fromUnits.text! = entry.fromUnits
+        fromField.text! = "\(entry.fromVal)"
+        toUnits.text! = entry.toUnits
+        toField.text! = "\(entry.toVal)"
+        
+        if (entry.fromUnits == "Meters" || entry.fromUnits == "Miles" || entry.fromUnits == "Yards") {
+            if (mode == CalculatorMode.Volume) {
+                changeMode(UIButton())
+            }
+        } else {
+            if (mode == CalculatorMode.Length) {
+                changeMode(UIButton())
+            }
+        }
+        
+    }
 }
